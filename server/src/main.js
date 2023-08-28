@@ -1,6 +1,6 @@
 import express from "express";
-import "./config/db.js";
 import "dotenv/config";
+import "./config/db.js";
 import taskRouter from "./routes/task.js";
 import { StatusCode, HttpError } from "./util/Http.js";
 
@@ -12,7 +12,7 @@ app.use("/task", taskRouter);
 
 //page not found error 404
 app.use((req, res, next) => {
-  return next(new HttpError("Could not find this route", StatusCode.NotFound));
+  next(new HttpError("Could not find this route", StatusCode.NotFound));
 });
 
 //error handler

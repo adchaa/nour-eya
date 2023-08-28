@@ -7,8 +7,8 @@ export const StatusCode = {
   InternalServerError: 500,
 };
 export class HttpError extends Error {
-  constructor(messsage, code) {
-    super(messsage);
+  constructor(message, code) {
+    super(message);
     this.statusCode = code;
   }
 }
